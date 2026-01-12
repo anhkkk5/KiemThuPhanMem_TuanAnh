@@ -1,11 +1,19 @@
-![Uploading image.png…]()
-
-
-
-
-
+Chương 1.
+## Kết quả trải nghiệm trò chơi Can't Unsee
 <img width="1892" height="350" alt="image" src="https://github.com/user-attachments/assets/45d70c1e-f1d9-40d3-99df-ba4a9aa69484" /># KiemThuPhanMem_TuanAnh# Student Score Analyzer – Unit Test with JUnit
+- Điểm đạt được: **5780**
+- Xếp hạng: **Beginner**
+- Thời gian hoàn thành: **00:06:34**
 
+Ảnh trên minh họa kết quả hoàn thành trò chơi *Can't Unsee*, được sử dụng làm ví dụ minh họa giao diện và kết quả người dùng.
+
+
+
+
+
+
+
+Bài tập Java.
 ## 1. Mô tả bài toán
 Chương trình phân tích điểm số học sinh:
 - Đếm số học sinh đạt loại Giỏi (>= 8.0)
