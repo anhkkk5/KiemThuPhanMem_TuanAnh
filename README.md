@@ -1,53 +1,46 @@
-Chương 1.
-## Kết quả trải nghiệm trò chơi Can't Unsee
+Chương 1
+Kết quả trải nghiệm trò chơi Can't Unsee
 <img width="3068" height="1648" alt="screenshot_1767597951" src="https://github.com/user-attachments/assets/1eadfcc0-6734-4b9f-a61a-9fc79d707858" />
-- Điểm đạt được: **5780**
-- Xếp hạng: **Beginner**
-- Thời gian hoàn thành: **00:06:34**
 
-Ảnh trên minh họa kết quả hoàn thành trò chơi *Can't Unsee*, được sử dụng làm ví dụ minh họa giao diện và kết quả người dùng.
+Điểm đạt được: 5780
 
+Xếp hạng: Beginner
 
+Thời gian hoàn thành: 00:06:34
 
+Ảnh trên minh họa kết quả hoàn thành trò chơi Can't Unsee, được sử dụng làm ví dụ minh họa cho giao diện và kết quả của người dùng.
 
-
-
-
-# 📊 Bài tập thực hành kiểm thử với JUnit
-
-## Chủ đề: Phân tích dữ liệu điểm số học sinh
-
----
-
-## 🎯 Mục tiêu học tập
+📊 Bài tập thực hành kiểm thử với JUnit
+Chủ đề: Phân tích dữ liệu điểm số học sinh
+🎯 Mục tiêu học tập
 
 Bài tập này giúp sinh viên:
 
-* Hiểu và **viết kiểm thử tự động bằng JUnit 5** cho chương trình Java.
-* Rèn luyện kỹ năng **phân tích yêu cầu, xử lý dữ liệu đầu vào không hợp lệ**.
-* Biết cách **tổ chức project**, làm việc với **GitHub Issues – Commit – README**.
-* Bước đầu **khai thác AI tạo sinh** (như ChatGPT) để hỗ trợ lập trình và kiểm thử.
+Hiểu và viết kiểm thử tự động bằng JUnit 5 cho chương trình Java.
 
----
+Rèn luyện kỹ năng phân tích yêu cầu và xử lý dữ liệu đầu vào không hợp lệ.
 
-## 📌 Mô tả bài toán
+Biết cách tổ chức project, làm việc với GitHub Issues – Commit – README.
+
+Bước đầu khai thác AI tạo sinh (như ChatGPT) để hỗ trợ lập trình và kiểm thử.
+
+📌 Mô tả bài toán
 
 Xây dựng chương trình Java để phân tích điểm số học sinh, bao gồm:
 
-* Đếm số học sinh đạt loại **Giỏi** (điểm ≥ 8.0)
-* Tính **điểm trung bình hợp lệ**
+Đếm số học sinh đạt loại Giỏi (điểm ≥ 8.0).
 
-📌 **Quy ước dữ liệu hợp lệ**:
+Tính điểm trung bình hợp lệ.
 
-* Điểm hợp lệ nằm trong khoảng **0 → 10**
-* Điểm < 0 hoặc > 10 được xem là **dữ liệu sai và bị bỏ qua**
-* Nếu danh sách rỗng → trả về **0**
+📌 Quy ước dữ liệu hợp lệ:
 
----
+Điểm hợp lệ nằm trong khoảng 0 → 10.
 
-## 🧱 Cấu trúc dự án
+Điểm < 0 hoặc > 10 được xem là dữ liệu sai và bị bỏ qua.
 
-```text
+Nếu danh sách rỗng → trả về 0.
+
+🧱 Cấu trúc dự án
 unit-test/
 │
 ├── src/
@@ -57,79 +50,67 @@ unit-test/
 │   └── StudentAnalyzerTest.java
 │
 └── README.md
-```
 
----
-
-## 🧩 Mô tả lớp `StudentAnalyzer`
-
-### 1️⃣ countExcellentStudents
-
-```java
+🧩 Mô tả lớp StudentAnalyzer
+1️⃣ countExcellentStudents
 public int countExcellentStudents(List<Double> scores)
-```
 
-**Chức năng**:
 
-* Đếm số học sinh có điểm **≥ 8.0**
+Chức năng:
 
-**Yêu cầu xử lý**:
+Đếm số học sinh có điểm ≥ 8.0.
 
-* Bỏ qua điểm < 0 hoặc > 10
-* Nếu danh sách rỗng → trả về 0
+Yêu cầu xử lý:
 
----
+Bỏ qua các điểm < 0 hoặc > 10.
 
-### 2️⃣ calculateValidAverage
+Nếu danh sách rỗng → trả về 0.
 
-```java
+2️⃣ calculateValidAverage
 public double calculateValidAverage(List<Double> scores)
-```
 
-**Chức năng**:
 
-* Tính điểm trung bình của các điểm hợp lệ
+Chức năng:
 
-**Yêu cầu xử lý**:
+Tính điểm trung bình của các điểm hợp lệ.
 
-* Chỉ tính các điểm từ 0 → 10
-* Nếu không có điểm hợp lệ → trả về 0
+Yêu cầu xử lý:
 
----
+Chỉ tính các điểm trong khoảng từ 0 → 10.
 
-## 🧪 Kiểm thử đơn vị với JUnit 5
+Nếu không có điểm hợp lệ → trả về 0.
 
-### 🎯 Mục tiêu kiểm thử
+🧪 Kiểm thử đơn vị với JUnit 5
+🎯 Mục tiêu kiểm thử
 
-* Đảm bảo các phương thức hoạt động đúng trong mọi tình huống
-* Phát hiện lỗi logic sớm trong quá trình phát triển
+Đảm bảo các phương thức hoạt động đúng trong mọi tình huống.
 
-### 📂 Lớp kiểm thử
+Phát hiện lỗi logic sớm trong quá trình phát triển.
 
-`StudentAnalyzerTest.java`
+📂 Lớp kiểm thử
 
-### ✅ Các nhóm test case
+StudentAnalyzerTest.java
 
-#### 1️⃣ Trường hợp bình thường
+✅ Các nhóm test case
+1️⃣ Trường hợp bình thường
 
-* Danh sách có cả điểm hợp lệ và không hợp lệ
-* Danh sách toàn bộ điểm hợp lệ
+Danh sách có cả điểm hợp lệ và không hợp lệ.
 
-#### 2️⃣ Trường hợp biên
+Danh sách chỉ chứa các điểm hợp lệ.
 
-* Danh sách rỗng
-* Danh sách chỉ chứa 0 hoặc 10
+2️⃣ Trường hợp biên
 
-#### 3️⃣ Trường hợp dữ liệu sai
+Danh sách rỗng.
 
-* Có điểm < 0
-* Có điểm > 10
+Danh sách chỉ chứa điểm 0 hoặc 10.
 
----
+3️⃣ Trường hợp dữ liệu sai
 
-### 🔎 Ví dụ test case
+Danh sách có điểm < 0.
 
-```java
+Danh sách có điểm > 10.
+
+🔎 Ví dụ test case
 @Test
 public void testCountExcellentStudents() {
     StudentAnalyzer analyzer = new StudentAnalyzer();
@@ -138,67 +119,46 @@ public void testCountExcellentStudents() {
     ));
     assertEquals(0, analyzer.countExcellentStudents(Collections.emptyList()));
 }
-```
 
----
+▶️ Hướng dẫn chạy chương trình
+🔧 Yêu cầu môi trường
 
-## ▶️ Hướng dẫn chạy chương trình
+Java JDK 8 trở lên
 
-### 🔧 Yêu cầu môi trường
+IDE: IntelliJ IDEA / Eclipse / VS Code
 
-* **Java JDK 8+**
-* IDE: IntelliJ IDEA / Eclipse / VS Code
-* **JUnit 5 (JUnit Jupiter)**
+JUnit 5 (JUnit Jupiter)
 
----
+▶️ Cách chạy test
+Cách 1: Chạy trong IDE
 
-### ▶️ Cách chạy test
+Mở file StudentAnalyzerTest.java.
 
-#### Cách 1: Chạy trong IDE
+Chuột phải → Run Tests.
 
-* Mở file `StudentAnalyzerTest.java`
-* Chuột phải → **Run Test**
-
-#### Cách 2: Chạy bằng Maven (nếu có)
-
-```bash
+Cách 2: Chạy bằng Maven (nếu có)
 mvn test
-```
 
----
-
-## 🐙 Quản lý công việc với GitHub Issues
-
-### 📌 Danh sách Issues
-
-| Issue | Tên                             | Mô tả                               |
-| ----- | ------------------------------- | ----------------------------------- |
-| #1    | Viết hàm countExcellentStudents | Đếm học sinh giỏi, validate dữ liệu |
-| #2    | Viết hàm calculateValidAverage  | Tính trung bình điểm hợp lệ         |
-| #3    | Viết test cho 2 hàm             | Dùng JUnit kiểm thử đầy đủ          |
-| #4    | Viết README.md                  | Mô tả bài toán & hướng dẫn          |
-
----
-
-## 📝 Quy ước commit message
+🐙 Quản lý công việc với GitHub Issues
+📌 Danh sách Issues
+Issue	Tên	Mô tả
+#1	Viết hàm countExcellentStudents	Đếm học sinh giỏi, kiểm tra dữ liệu
+#2	Viết hàm calculateValidAverage	Tính điểm trung bình hợp lệ
+#3	Viết test cho hai hàm	Kiểm thử đầy đủ bằng JUnit
+#4	Viết README.md	Mô tả bài toán và hướng dẫn sử dụng
+📝 Quy ước commit message
 
 Ví dụ:
 
-```text
 feat: implement countExcellentStudents() #1
 test: add unit tests for StudentAnalyzer #3
 docs: update README with instructions #4
-```
-
-📌 Có thể dùng:
-
-* `fixes #1`
-* `closes #2`
-
-➡️ Issue sẽ **tự động đóng** khi merge vào nhánh chính
 
 
+📌 Có thể sử dụng:
 
+fixes #1
 
+closes #2
 
-
+➡️ Issue sẽ tự động được đóng khi merge vào nhánh chính.
