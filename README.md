@@ -1,6 +1,6 @@
 Chương 1.
 ## Kết quả trải nghiệm trò chơi Can't Unsee
-<img width="1892" height="350" alt="image" src="https://github.com/user-attachments/assets/45d70c1e-f1d9-40d3-99df-ba4a9aa69484" /># KiemThuPhanMem_TuanAnh# Student Score Analyzer – Unit Test with JUnit
+<img width="3068" height="1648" alt="screenshot_1767597951" src="https://github.com/user-attachments/assets/1eadfcc0-6734-4b9f-a61a-9fc79d707858" />
 - Điểm đạt được: **5780**
 - Xếp hạng: **Beginner**
 - Thời gian hoàn thành: **00:06:34**
