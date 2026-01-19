@@ -10,155 +10,40 @@ Thời gian hoàn thành: 00:06:34
 
 Ảnh trên minh họa kết quả hoàn thành trò chơi Can't Unsee, được sử dụng làm ví dụ minh họa cho giao diện và kết quả của người dùng.
 
-📊 Bài tập thực hành kiểm thử với JUnit
-Chủ đề: Phân tích dữ liệu điểm số học sinh
-🎯 Mục tiêu học tập
-
-Bài tập này giúp sinh viên:
-
-Hiểu và viết kiểm thử tự động bằng JUnit 5 cho chương trình Java.
-
-Rèn luyện kỹ năng phân tích yêu cầu và xử lý dữ liệu đầu vào không hợp lệ.
-
-Biết cách tổ chức project, làm việc với GitHub Issues – Commit – README.
-
-Bước đầu khai thác AI tạo sinh (như ChatGPT) để hỗ trợ lập trình và kiểm thử.
-
-📌 Mô tả bài toán
-
-Xây dựng chương trình Java để phân tích điểm số học sinh, bao gồm:
-
-Đếm số học sinh đạt loại Giỏi (điểm ≥ 8.0).
-
-Tính điểm trung bình hợp lệ.
-
-📌 Quy ước dữ liệu hợp lệ:
-
-Điểm hợp lệ nằm trong khoảng 0 → 10.
-
-Điểm < 0 hoặc > 10 được xem là dữ liệu sai và bị bỏ qua.
-
-Nếu danh sách rỗng → trả về 0.
-
-🧱 Cấu trúc dự án
+CHƯƠNG 2: KIỂM THỬ ĐƠN VỊ VỚI JUNIT (10/01/2026)
+1. Thông tin chung
+Yêu cầu: Viết Unit Test cho chương trình phân tích điểm học sinh.
+Công cụ thực hiện: VS Code, Java, Maven, JUnit 4.13.2.
+2. Cấu trúc dự án
 unit-test/
-│
 ├── src/
-│   └── StudentAnalyzer.java
-│
+│   └── StudentAnalyzer.java      # Mã nguồn chính (Chức năng)
 ├── test/
-│   └── StudentAnalyzerTest.java
-│
-└── README.md
+│   └── StudentAnalyzerTest.java  # Mã nguồn kiểm thử (Test Cases)
+├── pom.xml                       # Cấu hình thư viện Maven
+└── README.md                     # File báo cáo này
+3. Mô tả bài toán
+Xây dựng lớp StudentAnalyzer để phân tích điểm số học sinh với yêu cầu xử lý dữ liệu chặt chẽ (Validate dữ liệu đầu vào).
 
-🧩 Mô tả lớp StudentAnalyzer
-1️⃣ countExcellentStudents
-public int countExcellentStudents(List<Double> scores)
+Các chức năng đã cài đặt:
+countExcellentStudents(List<Double> scores)
 
+Mục tiêu: Đếm số lượng học sinh đạt loại Giỏi (Điểm >= 8.0).
+Logic xử lý: Duyệt qua danh sách, tự động bỏ qua các điểm số không hợp lệ (nhỏ hơn 0 hoặc lớn hơn 10).
+calculateValidAverage(List<Double> scores)
 
-Chức năng:
+Mục tiêu: Tính điểm trung bình cộng của cả lớp.
+Logic xử lý: Chỉ cộng tổng các điểm hợp lệ (0-10). Trả về 0.0 nếu danh sách rỗng để tránh lỗi chia cho 0.
+4. Thiết kế kiểm thử (Test Cases)
+Sử dụng JUnit 4 để viết các kịch bản kiểm thử tự động trong file StudentAnalyzerTest.java:
 
-Đếm số học sinh có điểm ≥ 8.0.
-
-Yêu cầu xử lý:
-
-Bỏ qua các điểm < 0 hoặc > 10.
-
-Nếu danh sách rỗng → trả về 0.
-
-2️⃣ calculateValidAverage
-public double calculateValidAverage(List<Double> scores)
-
-
-Chức năng:
-
-Tính điểm trung bình của các điểm hợp lệ.
-
-Yêu cầu xử lý:
-
-Chỉ tính các điểm trong khoảng từ 0 → 10.
-
-Nếu không có điểm hợp lệ → trả về 0.
-
-🧪 Kiểm thử đơn vị với JUnit 5
-🎯 Mục tiêu kiểm thử
-
-Đảm bảo các phương thức hoạt động đúng trong mọi tình huống.
-
-Phát hiện lỗi logic sớm trong quá trình phát triển.
-
-📂 Lớp kiểm thử
-
-StudentAnalyzerTest.java
-
-✅ Các nhóm test case
-1️⃣ Trường hợp bình thường
-
-Danh sách có cả điểm hợp lệ và không hợp lệ.
-
-Danh sách chỉ chứa các điểm hợp lệ.
-
-2️⃣ Trường hợp biên
-
-Danh sách rỗng.
-
-Danh sách chỉ chứa điểm 0 hoặc 10.
-
-3️⃣ Trường hợp dữ liệu sai
-
-Danh sách có điểm < 0.
-
-Danh sách có điểm > 10.
-
-🔎 Ví dụ test case
-@Test
-public void testCountExcellentStudents() {
-    StudentAnalyzer analyzer = new StudentAnalyzer();
-    assertEquals(2, analyzer.countExcellentStudents(
-        Arrays.asList(9.0, 8.5, 7.0, 11.0, -1.0)
-    ));
-    assertEquals(0, analyzer.countExcellentStudents(Collections.emptyList()));
-}
-
-▶️ Hướng dẫn chạy chương trình
-🔧 Yêu cầu môi trường
-
-Java JDK 8 trở lên
-
-IDE: IntelliJ IDEA / Eclipse / VS Code
-
-JUnit 5 (JUnit Jupiter)
-
-▶️ Cách chạy test
-Cách 1: Chạy trong IDE
-
-Mở file StudentAnalyzerTest.java.
-
-Chuột phải → Run Tests.
-
-Cách 2: Chạy bằng Maven (nếu có)
-mvn test
-
-🐙 Quản lý công việc với GitHub Issues
-📌 Danh sách Issues
-Issue	Tên	Mô tả
-#1	Viết hàm countExcellentStudents	Đếm học sinh giỏi, kiểm tra dữ liệu
-#2	Viết hàm calculateValidAverage	Tính điểm trung bình hợp lệ
-#3	Viết test cho hai hàm	Kiểm thử đầy đủ bằng JUnit
-#4	Viết README.md	Mô tả bài toán và hướng dẫn sử dụng
-📝 Quy ước commit message
-
-Ví dụ:
-
-feat: implement countExcellentStudents() #1
-test: add unit tests for StudentAnalyzer #3
-docs: update README with instructions #4
-
-
-📌 Có thể sử dụng:
-
-fixes #1
-
-closes #2
-
-➡️ Issue sẽ tự động được đóng khi merge vào nhánh chính.
+ID	Kịch bản (Scenario)	Dữ liệu đầu vào (Input)	Mong đợi (Expected)	Ghi chú
+#1	Dữ liệu hỗn hợp	9.0, 8.5, 7.0, -1.0	Đếm giỏi: 2	Bỏ qua điểm lỗi -1.0
+#2	Danh sách rỗng	Empty List	Trả về 0	Kiểm tra độ ổn định
+#3	Dữ liệu biên	8.0	Đếm giỏi: 1	Kiểm tra toán tử >=
+#4	Tính trung bình	9.0, 8.5, 7.0	Kết quả: ~8.167	Sai số cho phép 0.01
+5. Hướng dẫn chạy (How to run)
+Mở thư mục dự án bằng VS Code.
+Đợi Maven tải thư viện JUnit (trong file pom.xml).
+Mở file test/StudentAnalyzerTest.java.
+Nhấn nút Play (▶) màu xanh bên cạnh tên Class hoặc tên hàm để chạy test.
